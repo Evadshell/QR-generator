@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simon game</title>
+    <style>
+          body {
+    background-color: #141414;
+    color: #cfcfcf;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  input[type="text"] {
+    border: none;
+    background-color: #282828;
+    color: #cfcfcf;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  input[type="submit"] {
+    border: none;
+    background-color: #ff007a;
+    color: #282828;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #ff005a;
+  }
+
+  
+
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: white;
+      color: #141414;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      background-color: #f2f2f2;
+      color: #141414;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+img {
+  width: 30%; /* Sets the image width to 50% of its parent container */
+  height: auto; /* Automatically adjusts the image height to maintain its aspect ratio */
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+    </style>
+   
+
+<body>
+    <% if(locals.t){ %>
+        <h1><%= t %></h1>
+        <% }else{ %>
+            <h1>enter the url</h1>
+            <% } %>
+
+    <form action="/submit" method="post">
+        <input type="text" name="url" placeholder="paste the link here">
+        <input type="submit" value="OK">
+    </form>
+    <img src="qr.png">
+
+
+    
+</body>
+
+</html>
